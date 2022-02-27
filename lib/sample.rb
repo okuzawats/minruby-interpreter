@@ -1,3 +1,3 @@
-def answer(n)
-  n == 42
+def answer(ans)
+  ans == 42
 end
