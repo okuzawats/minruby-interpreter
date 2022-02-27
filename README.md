@@ -1,10 +1,7 @@
-# Awesome Ruby Project
+[![test](https://github.com/okuzawats/ruby-interpreter-by-ruby/actions/workflows/test.yml/badge.svg)](https://github.com/okuzawats/ruby-interpreter-by-ruby/actions/workflows/test.yml)
+[![reviewdog](https://github.com/okuzawats/ruby-interpreter-by-ruby/actions/workflows/reviewdog.yml/badge.svg)](https://github.com/okuzawats/ruby-interpreter-by-ruby/actions/workflows/reviewdog.yml)
+[![codecov](https://codecov.io/gh/okuzawats/ruby-interpreter-by-ruby/branch/main/graph/badge.svg?token=PGE2C50T14)](https://codecov.io/gh/okuzawats/ruby-interpreter-by-ruby)
 
-A GitHub Template Repository for Ruby.
+# Ruby interpreter by Ruby
 
-## How to Use
-
-- update README.md
-- remove or rename `lib/sample.rb` and `test/test_sample.rb`
-- update `.github/workflows/test.yml`
-- write your codes
+coming soon...
