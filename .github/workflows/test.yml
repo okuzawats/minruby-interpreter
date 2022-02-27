@@ -12,6 +12,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
+      - name: bundle install
+        run: |
+          bundle install
       - name: run test
         run: |
-          ruby test/test_sample.rb
+          bundle exec ruby test/test_sample.rb
+      - name: upload coverage report
+        uses: codecov/codecov-action@v2
+        with:
+          files: ./coverage/coverage.xml
+          flags: unittests
+          fail_ci_if_error: true
