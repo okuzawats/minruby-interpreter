@@ -1,3 +1,3 @@
-def answer_to_the_ultimate_question
-  42
+def answer(n)
+  n == 42
 end
