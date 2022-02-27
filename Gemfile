@@ -8,4 +8,5 @@ group :test do
   gem 'codecov', require: false
   gem 'minitest'
   gem 'simplecov', require: false
+  gem 'simplecov-cobertura'
 end
