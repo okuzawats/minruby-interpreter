@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rubocop', require: false
 
 group :test do
-  gem 'minitest'
   gem 'codecov', require: false
+  gem 'minitest'
   gem 'simplecov', require: false
 end
