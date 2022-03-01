@@ -2,6 +2,7 @@
 
 source 'https://rubygems.org'
 
+gem 'minruby'
 gem 'rubocop', require: false
 
 group :test do
