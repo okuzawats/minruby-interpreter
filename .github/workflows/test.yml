@@ -17,7 +17,7 @@ jobs:
           bundle install
       - name: run test
         run: |
-          bundle exec ruby test/test_sample.rb
+          rake test
       - name: upload coverage report
         uses: codecov/codecov-action@v2
         with:
