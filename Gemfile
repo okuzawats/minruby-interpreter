@@ -3,6 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'minruby'
+gem 'rake'
 gem 'rubocop', require: false
 
 group :test do
