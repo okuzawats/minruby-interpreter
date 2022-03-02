@@ -17,4 +17,4 @@ jobs:
           bundle install
       - name: run main
         run: |
-          ruby main.rb
+          bundle exec ruby main.rb
