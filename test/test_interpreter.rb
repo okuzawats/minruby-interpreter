@@ -7,6 +7,10 @@ class TestSum < Minitest::Test
     assert_equal 100, evaluate(minruby_parse('(1 + 2) / 3 * 4 * (56 / 7 + 8 + 9)'))
   end
 
+  def test_arithetic_operation2
+    assert_equal 81, evaluate(minruby_parse('((3 + 4) % 4) ** 4'))
+  end
+
   def test_only_literal
     assert_equal 42, evaluate(minruby_parse('42'))
   end
@@ -25,6 +29,14 @@ class TestSum < Minitest::Test
 
   def test_division
     assert_equal 42, evaluate(minruby_parse('84 / 2'))
+  end
+
+  def test_remainder
+    assert_equal 1, evaluate(minruby_parse('9 % 4'))
+  end
+
+  def test_exponentiation
+    assert_equal 81, evaluate(minruby_parse('3 ** 4'))
   end
 end
 
