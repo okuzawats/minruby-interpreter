@@ -38,5 +38,21 @@ class TestSum < Minitest::Test
   def test_exponentiation
     assert_equal 81, evaluate(minruby_parse('3 ** 4'))
   end
+
+  def test_equals_true
+    assert_equal true, evaluate(minruby_parse('1 == 1'))
+  end
+
+  def test_equals_false
+    assert_equal false, evaluate(minruby_parse('1 == 2'))
+  end
+
+  def test_not_equals_true
+    assert_equal true, evaluate(minruby_parse('1 != 2'))
+  end
+
+  def test_not_equals_false
+    assert_equal false, evaluate(minruby_parse('1 != 1'))
+  end
 end
 
