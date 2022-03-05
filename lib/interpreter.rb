@@ -26,5 +26,21 @@ def evaluate(tree)
     left = evaluate(tree[1])
     right = evaluate(tree[2])
     left**right
+  when '=='
+    left = evaluate(tree[1])
+    right = evaluate(tree[2])
+    left == right
+  when '!='
+    left = evaluate(tree[1])
+    right = evaluate(tree[2])
+    left != right
+  when '>'
+    true
+  when '>='
+    true
+  when '<'
+    true
+  when '<='
+    true
   end
 end
