@@ -35,12 +35,20 @@ def evaluate(tree)
     right = evaluate(tree[2])
     left != right
   when '>'
-    true
+    left = evaluate(tree[1])
+    right = evaluate(tree[2])
+    left > right
   when '>='
-    true
+    left = evaluate(tree[1])
+    right = evaluate(tree[2])
+    left >= right
   when '<'
-    true
+    left = evaluate(tree[1])
+    right = evaluate(tree[2])
+    left < right
   when '<='
-    true
+    left = evaluate(tree[1])
+    right = evaluate(tree[2])
+    left <= right
   end
 end
