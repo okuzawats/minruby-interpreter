@@ -38,5 +38,61 @@ class TestSum < Minitest::Test
   def test_exponentiation
     assert_equal 81, evaluate(minruby_parse('3 ** 4'))
   end
+
+  def test_equals_true
+    assert_equal true, evaluate(minruby_parse('1 == 1'))
+  end
+
+  def test_equals_false
+    assert_equal false, evaluate(minruby_parse('1 == 2'))
+  end
+
+  def test_not_equals_true
+    assert_equal true, evaluate(minruby_parse('1 != 2'))
+  end
+
+  def test_not_equals_false
+    assert_equal false, evaluate(minruby_parse('1 != 1'))
+  end
+
+  def test_left_greater_true
+    assert_equal true, evaluate(minruby_parse('2 > 1'))
+  end
+
+  def test_left_greater_false
+    assert_equal false, evaluate(minruby_parse('1 > 1'))
+  end
+
+  def test_left_greater_or_equal_true_if_greater
+    assert_equal true, evaluate(minruby_parse('2 >= 1'))
+  end
+
+  def test_left_greater_or_equal_true_if_equal
+    assert_equal true, evaluate(minruby_parse('1 >= 1'))
+  end
+
+  def test_left_greater_or_equal_false
+    assert_equal false, evaluate(minruby_parse('1 >= 2'))
+  end
+
+  def test_left_smaller_true
+    assert_equal true, evaluate(minruby_parse('1 < 2'))
+  end
+
+  def test_left_smaller_false
+    assert_equal false, evaluate(minruby_parse('2 < 1'))
+  end
+
+  def test_left_smaller_or_equal_true_if_smaller
+    assert_equal true, evaluate(minruby_parse('1 <= 2'))
+  end
+
+  def test_left_smaller_or_equal_true_if_equal
+    assert_equal true, evaluate(minruby_parse('1 <= 1'))
+  end
+
+  def test_left_smaller_or_equal_false
+    assert_equal false, evaluate(minruby_parse('2 <= 1'))
+  end
 end
 
