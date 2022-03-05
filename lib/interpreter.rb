@@ -25,6 +25,6 @@ def evaluate(tree)
   when '**'
     left = evaluate(tree[1])
     right = evaluate(tree[2])
-    left ** right
+    left**right
   end
 end
