@@ -11,6 +11,23 @@ class TestSum < Minitest::Test
     assert_equal 81, evaluate(minruby_parse('((3 + 4) % 4) ** 4'))
   end
 
+  def test_arithetic_operation3
+    assert_equal true, evaluate(minruby_parse('1 + 1 == 2'))
+    assert_equal false, evaluate(minruby_parse('1 - 1 == 2'))
+    assert_equal true, evaluate(minruby_parse('1 + 2 != 2'))
+    assert_equal false, evaluate(minruby_parse('1 + 1 != 2 - 0'))
+    assert_equal true, evaluate(minruby_parse('2 > 2 - 1'))
+    assert_equal false, evaluate(minruby_parse('2 - 1 > 1'))
+    assert_equal true, evaluate(minruby_parse('1 + 1 >= 1'))
+    assert_equal true, evaluate(minruby_parse('1 * 1 >= 1'))
+    assert_equal false, evaluate(minruby_parse('1 >= (2 * 2)'))
+    assert_equal true, evaluate(minruby_parse('1 < 1 + 1 + 1'))
+    assert_equal false, evaluate(minruby_parse('2 < 2 - 1 - 1'))
+    assert_equal true, evaluate(minruby_parse('1 <= 1 * 2 * 3'))
+    assert_equal true, evaluate(minruby_parse('1 <= 1 / 1'))
+    assert_equal false, evaluate(minruby_parse('2 <= 2 % 1'))
+  end
+
   def test_only_literal
     assert_equal 42, evaluate(minruby_parse('42'))
   end
