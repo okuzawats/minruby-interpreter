@@ -112,4 +112,3 @@ class TestSum < Minitest::Test
     assert_equal false, evaluate(minruby_parse('2 <= 1'))
   end
 end
-
