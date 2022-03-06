@@ -1,5 +1,11 @@
 def evaluate(tree, env = {})
   case tree[0]
+  when 'if'
+    if evaluate(tree[1], env)
+      evaluate(tree[2], env)
+    else
+      evaluate(tree[3], env)
+    end
   when 'lit'
     tree[1]
   when '+'
