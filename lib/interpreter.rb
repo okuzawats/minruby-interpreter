@@ -56,9 +56,9 @@ def evaluate(tree, env = {})
   when 'stmts'
     i = 1
     last = nil
-    while tree[i] != nil
+    while !tree[i].nil?
       last = evaluate(tree[i], env)
-      i = i + 1
+      i += 1
     end
     last
   when 'var_assign'
