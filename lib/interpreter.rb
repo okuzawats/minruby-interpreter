@@ -50,5 +50,8 @@ def evaluate(tree)
     left = evaluate(tree[1])
     right = evaluate(tree[2])
     left <= right
+  when 'func_call'
+    # TODO
+    p(evaluate(tree[2]))
   end
 end
