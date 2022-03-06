@@ -19,9 +19,9 @@ jobs:
         run: |
           rake test
       - name: upload coverage report
-        continue-on-error: true
         uses: codecov/codecov-action@v2
         with:
           files: ./coverage/coverage.xml
           flags: unittests
-          fail_ci_if_error: true
+          fail_ci_if_error: false
+          varbose: true
