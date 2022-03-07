@@ -1,3 +1,9 @@
+require 'minruby'
+
+def execute(code)
+  evaluate(minruby_parse(code))
+end
+
 def evaluate(tree, env = {})
   case tree[0]
   when 'if'

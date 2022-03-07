@@ -1,7 +1,6 @@
-require 'minruby'
 require_relative './lib/interpreter'
 
-evaluate minruby_parse("
+fizzbuzz = "
 i = 1
 while i <= 100
   if i % 15 == 0
@@ -15,4 +14,6 @@ while i <= 100
   end
   i = i + 1
 end
-")
+"
+
+execute fizzbuzz
