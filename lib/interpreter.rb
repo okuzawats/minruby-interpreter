@@ -4,7 +4,15 @@ def execute(code)
   evaluate(minruby_parse(code))
 end
 
-def evaluate(tree, genv = {}, lenv = {})
+def default_genv
+  { 'p' => ['builtin', 'p'] }
+end
+
+def default_lenv
+  {}
+end
+
+def evaluate(tree, genv = default_genv, lenv = default_lenv)
   case tree[0]
   when 'if'
     if evaluate(tree[1], genv, lenv)
