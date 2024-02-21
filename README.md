@@ -14,6 +14,39 @@ RubyのコードからASTを構築するために、上記書籍用の補助ラ�
 
 * [mame/minruby: 『Ruby で学ぶ Ruby』用補助ライブラリ](https://github.com/mame/minruby)
 
+## 環境構築
+
+### Ruby
+
+```console
+$ rbenv -v
+rbenv 1.2.0
+$ rbenv install 3.0.6
+$ rbenv local 3.0.6
+```
+
+### Gem
+
+```
+$ bundler -v
+Bundler version 2.2.33
+$ bundle install
+```
+
+## 実行
+
+### メイン
+
+```console
+$ bundle exec ruby main.rb
+```
+
+### ユニットテスト
+
+```console
+$ bundle exec ruby ./test/test_interpreter.rb
+```
+
 ## その他
 
 * GitHub ActionsによるCIでMiniTestとRuboCopが回っています。
