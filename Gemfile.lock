@@ -5,7 +5,7 @@ GEM
     codecov (0.6.0)
       simplecov (>= 0.15, < 0.22)
     docile (1.4.0)
-    minitest (5.15.0)
+    minitest (5.22.2)
     minruby (1.0.4)
     parallel (1.21.0)
     parser (3.1.1.0)
