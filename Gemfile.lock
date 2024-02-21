@@ -38,6 +38,7 @@ GEM
     unicode-display_width (2.1.0)
 
 PLATFORMS
+  arm64-darwin-23
   x86_64-linux
 
 DEPENDENCIES
@@ -50,4 +51,4 @@ DEPENDENCIES
   simplecov-cobertura
 
 BUNDLED WITH
-   2.2.32
+   2.2.33
