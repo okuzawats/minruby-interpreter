@@ -7,6 +7,24 @@ end
 def evaluate(tree, env = {})
   # tree[0]は節の種別を表す文字列。種別に応じて、子の節を再帰的に評価する。
   case tree[0]
+  when 'lit'
+    # リテラルの場合は、値を評価する。
+    tree[1]
+  when 'stmts'
+    # 式の場合は、各項を評価し、最後の評価結果を再度評価する。
+    i = 1
+    last = nil
+    while !tree[i].nil?
+      last = evaluate(tree[i], env)
+      i += 1
+    end
+    last
+  when 'var_assign'
+    # 子1に子2を代入する。
+    env[tree[1]] = evaluate(tree[2], env)
+  when 'var_ref'
+    # 子1を評価する。
+    env[tree[1]]
   when 'if'
     # ifの場合は、子1を評価した結果がtrueであれば子2を、falseであれば子3を再帰的に評価する。
     if evaluate(tree[1], env)
@@ -20,9 +38,9 @@ def evaluate(tree, env = {})
     while evaluate(tree[1], env)
       evaluate(tree[2], env)
     end
-  when 'lit'
-    # リテラルの場合は、値を評価する。
-    tree[1]
+  when 'func_call'
+    # TODO
+    p(evaluate(tree[2], env))
   when '+'
     # "+"の場合は、子1を左項、子2を右項として加算（子1+子2）を評価する。
     left = evaluate(tree[1], env)
@@ -83,23 +101,5 @@ def evaluate(tree, env = {})
     left = evaluate(tree[1], env)
     right = evaluate(tree[2], env)
     left <= right
-  when 'func_call'
-    # TODO
-    p(evaluate(tree[2], env))
-  when 'stmts'
-    # 式の場合は、各項を評価し、最後の評価結果を再度評価する。
-    i = 1
-    last = nil
-    while !tree[i].nil?
-      last = evaluate(tree[i], env)
-      i += 1
-    end
-    last
-  when 'var_assign'
-    # 子1に子2を代入する。
-    env[tree[1]] = evaluate(tree[2], env)
-  when 'var_ref'
-    # 子1を評価する。
-    env[tree[1]]
   end
 end
