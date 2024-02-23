@@ -1,3 +1,3 @@
 require_relative './lib/interpreter'
 
-execute File.read("fizzbuzz.rb")
+execute File.read('fizzbuzz.rb')
